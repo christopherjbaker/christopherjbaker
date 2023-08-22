@@ -1,0 +1,11 @@
+{
+  "name": "christopherjbaker",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Christopher Baker <christopher@christopherjbaker.dev>",
+  "homepage": "https://www.christopherjbaker.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopherjbaker/christopherjbaker.git"
+  }
+}

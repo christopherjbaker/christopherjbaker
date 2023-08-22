@@ -1,0 +1,71 @@
+name: NPM
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      segment:
+        description: "The version segment to increment. (major, minor, or patch)"
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+      - name: ESLint
+        run: npm run eslint
+      - name: Prettier
+        run: npm run prettier
+      - name: Depcheck
+        run: npm run depcheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Increment Version
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config --local user.email "Workflow: $GITHUB_WORKFLOW[bot]"
+          git config --local user.name "$GITHUB_WORKFLOW[bot]@workflow"
+          npm version ${{ github.event.inputs.segment }} -m "Publish v%s"
+
+      - name: Publish
+        if: github.event_name == 'workflow_dispatch'
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push Tag
+        if: github.event_name == 'workflow_dispatch'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true
+
+      - name: Notify Slack for Failures
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: ci
+          status: FAILED
+          color: danger

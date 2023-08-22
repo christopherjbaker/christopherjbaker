@@ -1,11 +1,49 @@
 {
   "name": "christopherjbaker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "author": "Christopher Baker <christopher@christopherjbaker.dev>",
   "homepage": "https://www.christopherjbaker.dev/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/christopherjbaker/christopherjbaker.git"
+  },
+  "type": "module",
+  "main": "./bin/card.mjs",
+  "bin": {
+    "christopherjbaker": "./bin/card.mjs"
+  },
+  "engines": {
+    "node": "^18.0.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "eslint": "eslint src",
+    "prettier": "prettier --check src",
+    "depcheck": "depcheck .",
+    "dev": "ts-node --esm ./src/bin/card.mts",
+    "clean": "rm -rf bin",
+    "build": "tsc --project ./tsconfig.npm.json"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "@bitovi/eslint-config/react"
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "all",
+    "printWidth": 100
+  },
+  "dependencies": {
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0"
+  },
+  "devDependencies": {
+    "@bitovi/eslint-config": "^1.6.0",
+    "depcheck": "^1.4.6",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   }
 }

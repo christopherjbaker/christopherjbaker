@@ -1,0 +1,14 @@
+# environment
+.env
+.env.*
+
+# artifacts
+/bin
+/node_modules
+
+# misc
+.vscode
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+npm-debug.log*

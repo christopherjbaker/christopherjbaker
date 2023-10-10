@@ -22,9 +22,9 @@
     "eslint": "eslint src",
     "prettier": "prettier --check src",
     "depcheck": "depcheck .",
-    "dev": "ts-node --esm ./src/bin/card.mts",
+    "dev": "ts-node --esm ./src/card.mts",
     "clean": "rm -rf bin",
-    "build": "tsc --project ./tsconfig.npm.json"
+    "build": "tsc"
   },
   "eslintConfig": {
     "root": true,
@@ -33,7 +33,7 @@
   "prettier": {
     "semi": false,
     "trailingComma": "all",
-    "printWidth": 100
+    "printWidth": 120
   },
   "dependencies": {
     "boxen": "^7.1.1",

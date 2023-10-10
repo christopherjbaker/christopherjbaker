@@ -4,6 +4,8 @@
     "moduleResolution": "NodeNext",
     "target": "ESNext",
     "lib": ["ESNext"],
+    "outDir": "bin",
+    "rootDir": "./src",
 
     "declaration": true,
     "composite": true,
@@ -23,5 +25,6 @@
     "skipLibCheck": true,
     "useDefineForClassFields": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }

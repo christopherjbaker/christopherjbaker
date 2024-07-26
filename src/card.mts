@@ -3,15 +3,21 @@
 import chalk from "chalk"
 import boxen from "boxen"
 
-const output = `
-        ${chalk.white.bold("Work:")}  ${chalk.white("Director of React at Bitovi")}
-  ${chalk.white.bold("Consulting:")}  ${chalk.cyan("https://www.bitovi.com/react-consulting")}
-     ${chalk.white.bold("Twitter:")}  ${chalk.cyan("https://twitter.com/christophrjbakr")}
-      ${chalk.white.bold("GitHub:")}  ${chalk.cyan("https://github.com/christopherjbaker")}
-    ${chalk.white.bold("LinkedIn:")}  ${chalk.cyan("https://linkedin.com/in/christophrjbakr")}
-         ${chalk.white.bold("Web:")}  ${chalk.cyan("https://www.christopherjbaker.dev")}
+const text = chalk.white
+const label = text.bold
+const url = chalk.cyan
+const cmd = chalk.yellow
 
-        ${chalk.white.bold("Card:")}  ${chalk.yellow("npx christopherjbaker")}
+const output = `
+        ${label("Work:")}  ${text("Senior Frontend Technology Consultant")}
+  ${label("Consulting:")}  ${url("https://www.bitovi.com/react-consulting")}
+      ${label("GitHub:")}  ${url("https://github.com/christopherjbaker")}
+     ${label("Twitter:")}  ${url("https://twitter.com/christophrjbakr")}
+    ${label("LinkedIn:")}  ${url("https://linkedin.com/in/christophrjbakr")}
+     ${label("Discord:")}  ${url("https://discord.gg/uk4FQca8Ar")}
+         ${label("Web:")}  ${url("https://www.christopherjbaker.dev")}
+
+        ${label("Card:")}  ${cmd("npx christopherjbaker")}
 `
 
 // eslint-disable-next-line no-console
@@ -22,7 +28,7 @@ console.log(
     borderStyle: "round",
     borderColor: "magenta",
 
-    title: `${chalk.white("Christopher J Baker")} / ${chalk.cyan("@christopherjbaker")}`,
+    title: `${text("Christopher J Baker")} / ${cmd("@christopherjbaker")}`,
     titleAlignment: "center",
   }),
 )

@@ -14,9 +14,6 @@
     "christopherjbaker": "./bin/card.mjs"
   },
   "files": [],
-  "engines": {
-    "node": "^18.0.0"
-  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "eslint": "eslint src",

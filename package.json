@@ -11,7 +11,7 @@
   "type": "module",
   "main": "./bin/card.mjs",
   "bin": {
-    "christopherjbaker": "./bin/card.mjs"
+    "christopherjbaker": "bin/card.mjs"
   },
   "files": [],
   "scripts": {

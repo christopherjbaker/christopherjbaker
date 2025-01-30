@@ -9,13 +9,12 @@ const url = chalk.cyan
 const cmd = chalk.yellow
 
 const output = `
-        ${label("Work:")}  ${text("Senior Frontend Technology Consultant")}
-  ${label("Consulting:")}  ${url("https://www.bitovi.com/react-consulting")}
+        ${label("Work:")}  ${text("Frontend Technology Consultant")}
+         ${label("Web:")}  ${url("https://www.christopherjbaker.dev")}
       ${label("GitHub:")}  ${url("https://github.com/christopherjbaker")}
      ${label("Twitter:")}  ${url("https://twitter.com/christophrjbakr")}
+     ${label("Bluesky:")}  ${url("https://christopherjbaker.bsky.social")}
     ${label("LinkedIn:")}  ${url("https://linkedin.com/in/christophrjbakr")}
-     ${label("Discord:")}  ${url("https://discord.gg/uk4FQca8Ar")}
-         ${label("Web:")}  ${url("https://www.christopherjbaker.dev")}
 
         ${label("Card:")}  ${cmd("npx christopherjbaker")}
 `

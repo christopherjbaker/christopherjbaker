@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import chalk from "chalk"
 import boxen from "boxen"
+import chalk from "chalk"
 
 const text = chalk.white
 const label = text.bold

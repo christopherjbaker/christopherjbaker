@@ -28,13 +28,13 @@ jobs:
         run: npm ci
 
       - name: Typecheck
-        run: npm run typecheck
+        run: npm run lint-typecheck
       - name: ESLint
-        run: npm run eslint
+        run: npm run lint-eslint
       - name: Prettier
-        run: npm run prettier
+        run: npm run lint-prettier
       - name: Depcheck
-        run: npm run depcheck
+        run: npm run lint-depcheck
 
       - name: Build
         run: npm run build

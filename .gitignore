@@ -1,12 +1,13 @@
-# environment
+# Environment
 .env
 .env.*
 
-# artifacts
-/bin
+# Artifacts
 /node_modules
+/bin
+/coverage
 
-# misc
+# Misc
 .vscode
 .DS_Store
 Thumbs.db

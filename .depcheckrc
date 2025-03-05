@@ -1,4 +1,2 @@
 ignore-dirs:
   - /bin
-ignores:
-  - ts-node

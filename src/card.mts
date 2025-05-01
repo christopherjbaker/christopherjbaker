@@ -9,7 +9,7 @@ const url = chalk.cyan
 const cmd = chalk.yellow
 
 const output = `
-        ${label("Work:")}  ${text("Frontend Technology Consultant")}
+        ${label("Work:")}  ${text("Digital Technology Consultant")}
          ${label("Web:")}  ${url("https://www.christopherjbaker.dev")}
       ${label("GitHub:")}  ${url("https://github.com/christopherjbaker")}
      ${label("Twitter:")}  ${url("https://twitter.com/christophrjbakr")}
